@@ -2,9 +2,6 @@ cmake_minimum_required(VERSION 3.0)
 
 project(mitkCore)
 
-find_package(itkCommon REQUIRED)
-find_package(mbilog REQUIRED)
-
 include(files.cmake)
 
 include (GenerateExportHeader)
@@ -41,8 +38,7 @@ install(TARGETS ${PROJECT_NAME}
         INCLUDES DESTINATION include
         )
 
-#target_link_libraries(${PROJECT_NAME} PUBLIC mbilog)
-target_link_libraries(${PROJECT_NAME} PUBLIC itkCommon mbilog)
+#target_link_libraries(${PROJECT_NAME} PUBLIC itkCommon mbilog)
 
 install(FILES "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
 "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake"
